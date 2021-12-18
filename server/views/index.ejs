@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css"
+    />
+    <script type="module" src="/js/contents.js"></script>
+
+    <title>Terraria Items</title>
+  </head>
+
+  <body>
+    <div class="header">
+      <a href="/" class="logo__a"><img class="logo" src="/img/logo.png" /></a>
+
+      <form action="findByForm" class="search" method="get">
+        <input type="search" name="search" />
+        <input type="submit" value="검색" />
+      </form>
+    </div>
+    <div class="wrapper">
+      <% items.forEach(function(item){ %>
+      <div class="item__container" id="<%= item.name %>">
+        <img class="item" src="<%= item.image %>" alt="<%= item.image %>" />
+        <div class="item__description hidden">
+          <div><%= item.name%></div>
+          <!-- recipe1 -->
+          <div>
+            <% if (item.r1 != null) { %>
+            <div>recipe1</div>
+            <div>table: <%= item.r1.table%></div>
+            <!-- ingredient1 -->
+            <a href="/findByForm?search=<%= item.r1.ingredient1%>"
+              ><span class="ingredient"
+                >ingredient1: <%= item.r1.ingredient1%></span
+              >
+
+              <span>amount: <%= item.r1.amount1%></span></a
+            >
+            <!-- ingredient2 -->
+            <% if (item.r1.ingredient2 != '') { %>
+            <a href="/findByForm?search=<%= item.r1.ingredient2%>"
+              ><span class="ingredient"
+                >ingredient2: <%= item.r1.ingredient2%></span
+              >
+              <span>amount: <%= item.r1.amount2%></span></a
+            >
+            <% }; %>
+            <!-- ingredient3 -->
+
+            <% if (item.r1.ingredient3 != '') { %>
+            <a href="/findByForm?search=<%= item.r1.ingredient3%>">
+              <span class="ingredient"
+                >ingredient3: <%= item.r1.ingredient3%></span
+              >
+              <span>amount: <%= item.r1.amount3%></span></a
+            >
+            <% }; %>
+            <!-- ingredient4 -->
+            <% if (item.r1.ingredient4 != '') { %>
+            <a href="/findByForm?search=<%= item.r1.ingredient4%>">
+              <span class="ingredient"
+                >ingredient4: <%= item.r1.ingredient4%></span
+              >
+              <span>amount: <%= item.r1.amount4%></span></a
+            >
+            <% }; %>
+            <!-- ingredient5 -->
+            <% if (item.r1.ingredient5 != '') { %>
+            <a href="/findByForm?search=<%= item.r1.ingredient5%>">
+              <span class="ingredient"
+                >ingredient5: <%= item.r1.ingredient5%></span
+              >
+              <span>amount: <%= item.r1.amount5%></span></a
+            >
+            <% }; %>
+            <!-- ingredient6 -->
+            <% if (item.r1.ingredient6 != '') { %>
+            <a href="/findByForm?search=<%= item.r1.ingredient6%>">
+              <span class="ingredient"
+                >ingredient6: <%= item.r1.ingredient6%></span
+              >
+              <span>amount: <%= item.r1.amount6%></span></a
+            >
+            <% }; %> <% }; %>
+          </div>
+          <!-- recipe2 -->
+          <div>
+            <% if (item.r2 != null) { %>
+            <div>recipe2</div>
+            <div>table: <%= item.r2.table%></div>
+            <!-- ingredient1 -->
+            <a href="/findByForm?search=<%= item.r2.ingredient1%>">
+              <span class="ingredient"
+                >ingredient1: <%= item.r2.ingredient1%></span
+              >
+              <span>amount: <%= item.r2.amount1%></span></a
+            >
+            <!-- ingredient2 -->
+            <% if (item.r1.ingredient2 != '') { %>
+            <a href="/findByForm?search=<%= item.r2.ingredient2%>">
+              <span class="ingredient"
+                >ingredient2: <%= item.r2.ingredient2%></span
+              >
+              <span>amount: <%= item.r2.amount2%></span></a
+            >
+            <% }; %>
+            <!-- ingredient3 -->
+            <% if (item.r2.ingredient3 != '') { %>
+            <a href="/findByForm?search=<%= item.r2.ingredient3%>">
+              <span class="ingredient"
+                >ingredient3: <%= item.r2.ingredient3%></span
+              >
+              <span>amount: <%= item.r2.amount3%></span></a
+            >
+            <% }; %>
+            <!-- ingredient4 -->
+            <% if (item.r2.ingredient4 != '') { %>
+            <a href="/findByForm?search=<%= item.r2.ingredient4%>">
+              <span class="ingredient"
+                >ingredient4: <%= item.r2.ingredient4%></span
+              >
+              <span>amount: <%= item.r2.amount4%></span></a
+            >
+            <% }; %>
+            <!-- ingredient5 -->
+            <% if (item.r2.ingredient5 != '') { %>
+            <a href="/findByForm?search=<%= item.r2.ingredient5%>">
+              <span class="ingredient"
+                >ingredient5: <%= item.r2.ingredient5%></span
+              >
+              <span>amount: <%= item.r2.amount5%></span></a
+            >
+            <% }; %>
+            <!-- ingredient6 -->
+            <% if (item.r2.ingredient6 != '') { %>
+            <a href="/findByForm?search=<%= item.r2.ingredient6%>">
+              <span class="ingredient"
+                >ingredient6: <%= item.r2.ingredient6%></span
+              >
+              <span>amount: <%= item.r2.amount6%></span></a
+            >
+            <% }; %><% }; %>
+          </div>
+        </div>
+      </div>
+
+      <% }); %>
+    </div>
+  </body>
+</html>

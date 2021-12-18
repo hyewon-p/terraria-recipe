@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css"
+    />
+    <!-- <script type="text/javascript" src="/js/content.js"></script> -->
+
+    <title>Test EJS page</title>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <form action="findByForm" class="search">
+        <input type="search" name="search" />
+        <input type="submit" />
+      </form>
+      <% items.forEach(function(item){ %>
+      <div class="item__container">
+        <img class="item" src="<%= item.image %>" alt="<%= item.image %>" />
+        <div class="item__description">
+          <span><%= item.name %></span>
+          <span><%= item.r.table %></span>
+        </div>
+      </div>
+
+      <% }); %>
+    </div>
+  </body>
+</html>
